@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    .heading {
+      font-size: 25px;
+      margin-bottom: 30px;
+      margin-left: 20px;
+    }
+    .para {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+    .main {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+    .btn {
+      height: 30px;
+      width: 100px;
+      margin-bottom: 20px;
+      margin-left: 390px;
+    }
+  </style>
+  <body>
+    <h1 id="demo"></h1>
+    <table border="5" style="height: 550px; width: 650px">
+      <tr>
+        <td>
+          <h1 class="heading">Marksheet for Information Technology</h1>
+          <p class="para">Enter Marks</p>
+          <div class="main">
+            <div class="section-1">
+              <p>1. C Language</p>
+              <br />
+              <p>2. C++ Language</p>
+              <br />
+              <p>3. Database</p>
+              <br />
+              <p>4. HTML</p>
+              <br />
+              <p>5. CSS</p>
+              <br />
+              <p>6. php</p>
+              <br />
+              <p>7. Core java</p>
+            </div>
+            <div class="section-2">
+              <input type="text" name="" id="demo-1" /> <br />
+              <br />
+              <input type="text" name="" id="demo-2" /> <br />
+              <br />
+              <input type="text" name="" id="demo-3" /> <br />
+              <br />
+              <input type="text" name="" id="demo-4" /> <br />
+              <br />
+              <input type="text" name="" id="demo-5" /> <br />
+              <br />
+              <input type="text" name="" id="demo-6" /> <br />
+              <br />
+              <input type="text" name="" id="demo-7" /><br />
+            </div>
+          </div>
+          <button onclick="one()" class="btn">Result</button>
+          <h3>Total is : <span id="total"></span>/700</h3>
+          <h2>Percentage :<span id="per"></span></h2>
+        </td>
+      </tr>
+      <h1 id="demo"></h1>
+    </table>
+
+    <script>
+      function one() {
+        let a = document.getElementById("demo-1");
+        let b = document.getElementById("demo-2");
+        let c = document.getElementById("demo-3");
+        let d = document.getElementById("demo-4");
+        let e = document.getElementById("demo-5");
+        let f = document.getElementById("demo-6");
+        let g = document.getElementById("demo-7");
+
+        let total = document.getElementById("total");
+
+        total =
+          Number(a.value) +
+          Number(b.value) +
+          Number(c.value) +
+          Number(d.value) +
+          Number(e.value) +
+          Number(f.value) +
+          Number(g.value);
+
+        let maxtot = (document.getElementById("total").innerHTML = total);
+
+        document.getElementById("per").innerHTML = (maxtot / 700) * 100 + "%";
+
+        if (total > 34 && total <= 100) {
+        } else {
+          document.getElementById("demo").innerHTML = "Fail";
+        }
+      }
+    </script>
+  </body>
+</html>

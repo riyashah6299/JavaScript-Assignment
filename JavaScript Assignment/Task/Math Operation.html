@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Math Operations</title>
+  </head>
+  <style>
+    .heading {
+      border: 2px solid black;
+      height: 400px;
+      width: 500px;
+    }
+    .first,
+    .second {
+      display: flex;
+      padding: 5px;
+    }
+    input {
+      width: 200px;
+      height: 20px;
+      margin-top: 15px;
+      margin-left: 5px;
+    }
+    .button {
+      padding: 10px;
+      margin: 5px;
+      width: 70px;
+    }
+  </style>
+  <body>
+    <div class="heading">
+      <p>
+        <center><b>Math Operations</b></center>
+      </p>
+      <div class="first">
+        <p>Enter 1st Number :</p>
+
+        <input type="number" id="number1" />
+      </div>
+      <div class="second">
+        <p>Enter 2nd Number :</p>
+
+        <input type="number" id="number2" />
+      </div>
+      <br /><br />
+      <div class="btn" id="operators">
+        <button class="button" value="+">+</button>
+        <button class="button" value="-">-</button>
+        <button class="button" value="*">*</button>
+        <br />
+        <button class="button" value="/">/</button>
+        <button class="button" value="%">%</button>
+        <h3 id="result" oninput="calc()">Answer is :</h3>
+      </div>
+    </div>
+
+    <script>
+      function calc() {
+        var number1 = parseFloat(document.getElementById("number1").value);
+        var number2 = parseFloat(document.getElementById("number2").value);
+        var oper = document.getElementById("operators").value;
+
+        if (oper === "+") {
+          document.getElementById("result").value = number1 + number2;
+        }
+        if (oper === "-") {
+          document.getElementById("result").value = number1 - number2;
+        }
+        if (oper === "/") {
+          document.getElementById("result").value = number1 / number2;
+        }
+        if (oper === "*") {
+          document.getElementById("result").value = number1 * number2;
+        }
+        if (oper === "%") {
+          document.getElementById("result").value = number1 % number2;
+        }
+      }
+    </script>
+  </body>
+</html>
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    .one-div {
+      display: flex;
+      justify-content: space-evenly;
+      text-align: center;
+    }
+    .two-div {
+      display: flex;
+      justify-content: space-evenly;
+      text-align: center;
+      margin-top: 100px;
+    }
+    .adddd {
+      height: 40px;
+      width: 60px;
+      text-align: center;
+      margin-left: 5px;
+    }
+    .addd {
+      height: 40px;
+      width: 60px;
+      margin-right: 35px;
+      margin-top: 10px;
+    }
+    .div-1 {
+      font-size: 25px;
+    }
+    .div-2 {
+      font-size: 25px;
+    }
+    .para {
+      text-align: center;
+      font-size: 25px;
+      margin-bottom: 80px;
+    }
+    .div-4{
+      margin-right: 50px;
+    }
+  </style>
+  <body>
+    <table border="2" style="height: 500px; width: 600px">
+      <tr>
+        <td>
+          <p class="para">Maths Operations</p>
+          <div class="one-div">
+            <div class="div-1">
+              <p>Enter 1st number :</p>
+              <br />
+              <p>Enter 2st number :</p>
+            </div>
+            <div class="div-2">
+              <input type="text" name="" id="demo-1" style="height: 20px" />
+              <br />
+              <br />
+              <input type="text" name="" id="demo-2" style="height: 20px" />
+            </div>
+          </div>
+          <div class="two-div">
+            <div class="div-3">
+              <p>
+                <button onclick="one()" class="adddd">+</button>
+                <button onclick="two()" class="adddd">-</button>
+                <button onclick="three()" class="adddd">*</button>
+              </p>
+
+              <p>
+                <button onclick="four()" class="addd">/</button>
+                <button onclick="five()" class="addd">%</button>
+              </p>
+            </div>
+            <div class="div-4">
+              <h3>answer is : <span id="total"></span></h3>
+            </div>
+          </div>
+        </td>
+      </tr>
+    </table>
+
+    <script>
+      function one() {
+        let a = document.getElementById("demo-1");
+        let b = document.getElementById("demo-2");
+
+        let total = document.getElementById("total");
+
+        total = Number(a.value) + Number(b.value);
+
+        document.getElementById("total").innerHTML = total;
+      }
+      function two() {
+        let a = document.getElementById("demo-1");
+        let b = document.getElementById("demo-2");
+
+        let total = document.getElementById("total");
+
+        total = Number(a.value) - Number(b.value);
+
+        document.getElementById("total").innerHTML = total;
+      }
+      function three() {
+        let a = document.getElementById("demo-1");
+        let b = document.getElementById("demo-2");
+
+        let total = document.getElementById("total");
+
+        total = Number(a.value) * Number(b.value);
+
+        document.getElementById("total").innerHTML = total;
+      }
+      function four() {
+        let a = document.getElementById("demo-1");
+        let b = document.getElementById("demo-2");
+
+        let total = document.getElementById("total");
+
+        total = Number(a.value) / Number(b.value);
+
+        document.getElementById("total").innerHTML = total;
+      }
+      function five() {
+        let a = document.getElementById("demo-1");
+        let b = document.getElementById("demo-2");
+
+        let total = document.getElementById("total");
+
+        total = Number(a.value) % Number(b.value);
+
+        document.getElementById("total").innerHTML = total;
+      }
+    </script>
+  </body>
+</html> -->
